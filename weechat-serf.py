@@ -8,7 +8,8 @@ SCRIPT_DESC    = "A POC for serf cluster messaging"
 
 ### Default Settings ###
 settings = {
-            'server_name' : 'quakenet'
+            'server_name' : 'quakenet',
+            'serf_debug' : False
             }
 
 try:
@@ -30,14 +31,15 @@ class Message():
         self.message = message_string.split(' ', 1)
            
 def talk_callback(data, buffer, date, tags, displayed, highlight, prefix, message):
-    w.prnt('', 'data: %s' % data)
-    w.prnt('', 'buffer: %s' % buffer)
-    w.prnt('', 'date: %s' % date)
-    w.prnt('', 'tags: %s' % tags)
-    w.prnt('', 'displayed: %s' % displayed)
-    w.prnt('', 'highlight: %s' % highlight)
-    w.prnt('', 'prefix: %s' % prefix)
-    w.prnt('', 'message: %s' % message)
+    if serf_debug:
+        w.prnt('', 'data: %s' % data)
+        w.prnt('', 'buffer: %s' % buffer)
+        w.prnt('', 'date: %s' % date)
+        w.prnt('', 'tags: %s' % tags)
+        w.prnt('', 'displayed: %s' % displayed)
+        w.prnt('', 'highlight: %s' % highlight)
+        w.prnt('', 'prefix: %s' % prefix)
+        w.prnt('', 'message: %s' % message)
     incoming = Message(prefix, message)
 #    if incoming.receiver == w.info_get("irc_nick", server_name):           #Only react if the master is talking to me OR ALL bots
     if highlight == 1:
