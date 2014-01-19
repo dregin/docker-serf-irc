@@ -1,3 +1,5 @@
+import re, exec
+
 SCRIPT_NAME    = "serf_node"
 SCRIPT_AUTHOR  = "Bernard <dregin@gmail.com>"
 SCRIPT_VERSION = "0.1"
@@ -47,6 +49,10 @@ def talk_callback(data, buffer, date, tags, displayed, highlight, prefix, messag
         w.prnt('', 'message from %s: %s' % (incoming.sender, incoming.message))
         # TODO serf event exec
         w.prnt('', 'Sending serf event')
+        event_message=re.sub(r'\W+', '', incoming.message)
+        serf_event_cmd = "serf event wee-serf " + event_message
+        exec serf_event_cmd
+
 
 
     return w.WEECHAT_RC_OK
@@ -58,7 +64,7 @@ if __name__ == '__main__' and import_ok and w.register(SCRIPT_NAME, SCRIPT_AUTHO
     
     server_name = w.config_get_plugin('server_name')
     
-    w.prnt('', "Loaded Bot Slave")
+    w.prnt('', "Loaded Serf Node")
     w.prnt('', "My name is %s" % w.info_get("irc_nick", server_name))
     
     talk_hook = w.hook_print("", "", "", 1, "talk_callback", server_name)
