@@ -44,7 +44,7 @@ def talk_callback(data, buffer, date, tags, displayed, highlight, prefix, messag
     if incoming.receiver == "all" or incoming.receiver == w.info_get("irc_nick", server_name):           #Only react if the master is talking to me OR ALL bots
         w.prnt('', 'message from %s: %s' % (incoming.sender, incoming.message))
 
-    return weechat.WEECHAT_RC_OK
+    return w.WEECHAT_RC_OK
         
 if __name__ == '__main__' and import_ok and w.register(SCRIPT_NAME, SCRIPT_AUTHOR, SCRIPT_VERSION, SCRIPT_LICENSE, SCRIPT_DESC,'', ''):
     for opt, val in settings.iteritems():
