@@ -43,14 +43,7 @@ def talk_callback(data, buffer, date, tags, displayed, highlight, prefix, messag
     incoming = Message(prefix, message)
     if incoming.receiver == "all" or incoming.receiver == w.info_get("irc_nick", server_name):           #Only react if the master is talking to me OR ALL bots
         w.prnt('', 'message from %s: %s' % (incoming.sender, incoming.message))
-#    mind = Mind()
-#    mind.decide(incoming)
-#    if "mas" in incoming.sender:                                                                        #Only accept commands from specific user nick
-#        if incoming.type == "bot":
-#            if incoming.receiver == "all" or incoming.receiver == w.info_get("irc_nick", server_name):           #Only react if the master is talking to me OR ALL bots
-#                w.prnt('', '%s told %s to /%s %s' % (incoming.sender, incoming.receiver,incoming.command, incoming.parameters))
-#                if incoming.command == "nick": w.command('', '/nick %s' % incoming.parameters)
-                
+    
     return 1
         
 if __name__ == '__main__' and import_ok and w.register(SCRIPT_NAME, SCRIPT_AUTHOR, SCRIPT_VERSION, SCRIPT_LICENSE, SCRIPT_DESC,'', ''):
