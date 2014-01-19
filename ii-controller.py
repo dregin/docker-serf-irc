@@ -27,11 +27,11 @@ if __name__ == '__main__':
 	print("irc_nick: %s") % irc_nick
 	while 1:
 		irc_line = tailq.get().replace('\n','')
-		print("irc_line: %s, irc_nick: %s") % (irc_line, irc_nick)
+		# print("irc_line: %s, irc_nick: %s") % (irc_line, irc_nick)
 		# Check for highlight
 		if irc_nick + ": " in irc_line:
 			# Parse for message
-			message = irc_line.split(irc_nick + ": ", 1)[1] + "\n"
+                        message = "sender: " + irc_line[irc_line.find('<')+1 : irc_line.find('>')] + " message: " + irc_line.split(": ", 1)[1] + "\n"
 			print(message)
 			f = open(channel_dir + '/in','w')
         		f.write(irc_line)
