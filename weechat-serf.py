@@ -30,7 +30,6 @@ class Message():
         self.message = message_string.split(' ', 1)
            
 def talk_callback(data, buffer, date, tags, displayed, highlight, prefix, message):
-    '''   
     w.prnt('', 'data: %s' % data)
     w.prnt('', 'buffer: %s' % buffer)
     w.prnt('', 'date: %s' % date)
@@ -39,7 +38,6 @@ def talk_callback(data, buffer, date, tags, displayed, highlight, prefix, messag
     w.prnt('', 'highlight: %s' % highlight)
     w.prnt('', 'prefix: %s' % prefix)
     w.prnt('', 'message: %s' % message)
-    '''
     incoming = Message(prefix, message)
     if incoming.receiver == w.info_get("irc_nick", server_name):           #Only react if the master is talking to me OR ALL bots
         w.prnt('', 'message from %s: %s' % (incoming.sender, incoming.message))
