@@ -15,5 +15,6 @@ RUN unzip /var/tmp/0.3.0_linux_amd64.zip -d /usr/bin/
 
 # Supervisor
 RUN apt-get install -y supervisor
-RUN mkdir /var/log/supervisor
-ADD supervisor.conf /etc/supervisor/conf.d/supervisord.conf
+ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+
+CMD ["/usr/bin/supervisord"]
