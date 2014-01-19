@@ -23,13 +23,9 @@ except:
  
 class Message():
     def __init__(self, sender, message_string):
-        arguments = message_string.split(' ')
         self.sender = sender     
-        self.type = arguments[0]
-        self.receiver = arguments[1]
-        self.command = arguments[2]
-        self.parameters = arguments[3]
-        self.other = arguments[4]
+        self.type = message_string.split(' ')[0]
+        self.message = message_string.split(' ', 1)
            
 def talk_callback(data, buffer, date, tags, displayed, highlight, prefix, message):
     '''   
@@ -44,7 +40,7 @@ def talk_callback(data, buffer, date, tags, displayed, highlight, prefix, messag
     '''
     incoming = Message(prefix, message)
     if incoming.receiver == "all" or incoming.receiver == w.info_get("irc_nick", server_name):           #Only react if the master is talking to me OR ALL bots
-        w.prnt('', '%s told %s to /%s %s' % (incoming.sender, incoming.receiver,incoming.command, incoming.parameters))
+        w.prnt('', 'message from %s: %s' % (incoming.sender, incoming.message))
 #    mind = Mind()
 #    mind.decide(incoming)
 #    if "mas" in incoming.sender:                                                                        #Only accept commands from specific user nick
