@@ -9,7 +9,7 @@ SCRIPT_DESC    = "A POC for serf cluster messaging"
 ### Default Settings ###
 settings = {
             'server_name' : 'quakenet',
-            'serf_debug' : False
+            'serf_debug' : 'off'
             }
 
 try:
