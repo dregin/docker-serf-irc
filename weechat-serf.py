@@ -1,5 +1,5 @@
 '''
-SCRIPT_NAME    = "serf node"
+SCRIPT_NAME    = "serf_node"
 SCRIPT_AUTHOR  = "Bernard <dregin@gmail.com>"
 SCRIPT_VERSION = "0.1"
 SCRIPT_LICENSE = "GPL3"
