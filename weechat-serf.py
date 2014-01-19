@@ -46,6 +46,8 @@ def talk_callback(data, buffer, date, tags, displayed, highlight, prefix, messag
         incoming = Message(prefix, message)
         w.prnt('', 'message from %s: %s' % (incoming.sender, incoming.message))
         # TODO serf event exec
+        w.prnt('', 'Sending serf event')
+
 
     return w.WEECHAT_RC_OK
         
