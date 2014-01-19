@@ -1,10 +1,8 @@
-'''
 SCRIPT_NAME    = "serf_node"
 SCRIPT_AUTHOR  = "Bernard <dregin@gmail.com>"
 SCRIPT_VERSION = "0.1"
 SCRIPT_LICENSE = "GPL3"
 SCRIPT_DESC    = "A POC for serf cluster messaging"
-'''
 
 #from Mind import Mind
 
