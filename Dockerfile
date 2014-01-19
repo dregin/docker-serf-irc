@@ -15,6 +15,7 @@ RUN apt-get install -y wget unzip
 RUN wget https://dl.bintray.com/mitchellh/serf/0.3.0_linux_amd64.zip -P /var/tmp/
 RUN unzip /var/tmp/0.3.0_linux_amd64.zip -d /usr/bin/
 ADD serf-handler.sh /var/tmp/serf-handler.sh
+RUN chmod +x /var/tmp/serf-handler.sh
 
 # Supervisor
 RUN apt-get install -y supervisor
