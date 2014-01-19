@@ -31,6 +31,7 @@ class Message():
         self.message = message_string.split(' ', 1)
            
 def talk_callback(data, buffer, date, tags, displayed, highlight, prefix, message):
+    serf_debug = w.config_get_plugin('serf_debug')
     if serf_debug:
         w.prnt('', 'data: %s' % data)
         w.prnt('', 'buffer: %s' % buffer)
