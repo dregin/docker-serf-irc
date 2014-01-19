@@ -6,7 +6,7 @@ SCRIPT_LICENSE = "GPL3"
 SCRIPT_DESC    = "A POC for serf cluster messaging"
 '''
 
-from Mind import Mind
+#from Mind import Mind
 
 ### Default Settings ###
 settings = {
