@@ -14,7 +14,7 @@ ADD weechat-serf.py /.weechat/python/autoload/weechat-serf.py
 RUN apt-get install -y wget unzip
 RUN wget https://dl.bintray.com/mitchellh/serf/0.3.0_linux_amd64.zip -P /var/tmp/
 RUN unzip /var/tmp/0.3.0_linux_amd64.zip -d /usr/bin/
-ADD serf-event.sh /var/tmp/serf-handler.sh
+ADD serf-handler.sh /var/tmp/serf-handler.sh
 
 # Supervisor
 RUN apt-get install -y supervisor
