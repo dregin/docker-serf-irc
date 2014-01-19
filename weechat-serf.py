@@ -43,7 +43,7 @@ def talk_callback(data, buffer, date, tags, displayed, highlight, prefix, messag
         w.prnt('', 'message: %s' % message)
     incoming = Message(prefix, message)
 #    if incoming.receiver == w.info_get("irc_nick", server_name):           #Only react if the master is talking to me OR ALL bots
-    if highlight == 1:
+    if highlight == '1':
         w.prnt('', 'message from %s: %s' % (incoming.sender, incoming.message))
 
     return w.WEECHAT_RC_OK
