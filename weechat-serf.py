@@ -23,8 +23,10 @@ except:
  
 class Message():
     def __init__(self, sender, message_string):
+        arguments = message_string.split(' ')
         self.sender = sender     
-        self.type = message_string.split(' ')[0]
+        self.type = arguments[0]
+        self.receiver = arguments[1]
         self.message = message_string.split(' ', 1)
            
 def talk_callback(data, buffer, date, tags, displayed, highlight, prefix, message):
