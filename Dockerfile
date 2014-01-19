@@ -6,7 +6,8 @@ MAINTAINER Bernard McKeever dregin@gmail.com
 # Weechat
 RUN apt-get install -y python2.7 weechat-curses
 # TODO: Probably need to create the .weechat directory manually since weechat won't have run yet
-RUN export irc_nick=a`hostname`
+ADD weechat-runner.sh /var/tmp/weechat-runner.sh
+RUN chmod +x /var/tmp/weechat-runner.sh
 ADD weechat-serf.py /.weechat/python/autoload/weechat-serf.py
 
 # Serf
