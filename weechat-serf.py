@@ -28,7 +28,7 @@ class Message():
         self.sender = sender     
         self.type = arguments[0]
         self.receiver = arguments[1]
-        self.message = (' ').join(message_string.split(' ', 2))
+        self.message = (' ').join(message_string.split(' ')[1:])
            
 def talk_callback(data, buffer, date, tags, displayed, highlight, prefix, message):
     serf_debug = w.config_get_plugin('serf_debug')
@@ -41,9 +41,9 @@ def talk_callback(data, buffer, date, tags, displayed, highlight, prefix, messag
         w.prnt('', 'highlight: %s' % highlight)
         w.prnt('', 'prefix: %s' % prefix)
         w.prnt('', 'message: %s' % message)
-    incoming = Message(prefix, message)
-#    if incoming.receiver == w.info_get("irc_nick", server_name):           #Only react if the master is talking to me OR ALL bots
+
     if highlight == '1':
+        incoming = Message(prefix, message)
         w.prnt('', 'message from %s: %s' % (incoming.sender, incoming.message))
 
     return w.WEECHAT_RC_OK
