@@ -1,4 +1,4 @@
-import re, exec
+import re
 
 SCRIPT_NAME    = "serf_node"
 SCRIPT_AUTHOR  = "Bernard <dregin@gmail.com>"
