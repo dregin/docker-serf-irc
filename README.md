@@ -1,7 +1,7 @@
 docker-serf-weechat
 ===================
 
-Cluster message propogation visualised through messages to an IRC channel.
+Serf Cluster message propogation visualised through messages to an IRC channel.
 
 This setup will automatically join docker nodes to a serf cluster.
 
