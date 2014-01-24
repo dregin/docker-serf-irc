@@ -20,6 +20,8 @@ RUN apt-get install -y wget unzip
 RUN wget --no-check-certificate https://dl.bintray.com/mitchellh/serf/0.3.0_linux_amd64.zip -P /var/tmp/
 RUN unzip /var/tmp/0.3.0_linux_amd64.zip -d /usr/bin/
 ADD serf-handler.sh /var/tmp/serf-handler.sh
+ADD serf-join.sh /var/tmp/serf-join.sh
+EXPOSE 1337
 
 # Supervisor
 RUN apt-get install -y supervisor
