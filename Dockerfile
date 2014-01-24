@@ -13,7 +13,7 @@ MAINTAINER Bernard McKeever dregin@gmail.com
 # IRC-It (ii) - http://tools.suckless.org/ii/
 RUN apt-get install -y ii
 ADD ii-runner.sh /var/tmp/ii-runner.sh
-ADD ii-controller.sh /var/tmp/ii-controller.sh
+ADD ii-controller.py /var/tmp/ii-controller.py
 
 # Serf
 RUN apt-get install -y wget unzip
