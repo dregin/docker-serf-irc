@@ -1,3 +1,3 @@
 #!/bin/bash
 irc_nick=a`hostname`                                                
-/usr/bin/weechat-curses irc://${irc_nick}@irc.freenode.net/serf-test
+/usr/bin/ii -s irc.freenode.net -n ${irc_nick} -f ${irc_nick}
