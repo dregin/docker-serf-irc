@@ -4,11 +4,14 @@ FROM angelrr7702/ubuntu-13.10
 MAINTAINER Bernard McKeever dregin@gmail.com
 
 # Weechat
-RUN apt-get install -y python2.7 weechat-curses
+#RUN apt-get install -y python2.7 weechat-curses
 # Weechat runs as root. Quakenet does not like this. Freenode does. Bad idea, but it's only a POC...
-ADD weechat-runner.sh /var/tmp/weechat-runner.sh
-RUN chmod +x /var/tmp/weechat-runner.sh
-ADD weechat-serf.py /.weechat/python/autoload/weechat-serf.py
+#ADD weechat-runner.sh /var/tmp/weechat-runner.sh
+#RUN chmod +x /var/tmp/weechat-runner.sh
+#ADD weechat-serf.py /.weechat/python/autoload/weechat-serf.py
+
+# IRC-It (ii) - http://tools.suckless.org/ii/
+RUN apt-get install -y ii
 
 # Serf
 RUN apt-get install -y wget unzip
