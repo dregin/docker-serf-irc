@@ -1,4 +1,4 @@
-docker-serf-weechat
+docker-serf-irc
 ===================
 
 Serf Cluster message propogation visualised through messages to an IRC channel.
