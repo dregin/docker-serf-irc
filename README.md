@@ -15,12 +15,13 @@ The IRC Bots currently connect to irc.freenode.net/#serf-test - this can be chan
 
 - As each of the clustered bots receives the message through serf, they will send it back to the channel allowing you to see the message propogate through the cluster in real time.
 
-## Run
-### Build the docker image
-`sudo docker build -t dregin/serf-irc .`
+## Run 
+### Build the docker image (OPTIONAL - Repo lives on central registry @ https://registry.hub.docker.com/u/dregin/docker-serf-irc/)
+`sudo docker build -t dregin/docker-serf-irc .`
+
 
 ### Run the first docker image
-`sudo docker run --name serf1 -d -t dregin/serf-irc`
+`sudo docker run --name serf1 -d -t dregin/dockerserf-irc`
 
 ### Run the second docker image, linking it to the first
 `sudo docker run --link serf1:child -d -t dregin/serf-irc`
