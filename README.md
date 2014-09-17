@@ -21,7 +21,7 @@ The IRC Bots currently connect to irc.freenode.net/#serf-test - this can be chan
 
 
 ### Run the first docker image
-`sudo docker run --name serf1 -d -t dregin/dockerserf-irc`
+`sudo docker run --name serf1 -d -t dregin/docker-serf-irc`
 
 ### Run the second docker image, linking it to the first
 `sudo docker run --link serf1:child -d -t dregin/serf-irc`
