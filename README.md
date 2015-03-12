@@ -29,3 +29,6 @@ The IRC Bots currently connect to irc.freenode.net/#serf-test - this can be chan
 All later images can be linked to the same image - A single point of contact allows nodes establish a connection between each other \o/
 
 **Fun Exercise**: Stop the first image to see if the cluster remains intact!
+
+
+TEST CHANGE
